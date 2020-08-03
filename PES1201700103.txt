@@ -4,7 +4,7 @@ Deepik Karanji
 
 INTRODUCTION:
 
-An intal is a nonnegative integer of arbitrary length, but it is sufficient for your implementation to support up to 1000 decimal digits. 
+An intal is a nonnegative integer of arbitrary length. 
 The integer is stored as a null-terminated string of ASCII characters. 
 An intal is represented as a string of decimal digits ('0' thru '9') that are stored in the big-endian style. 
 That is, the most significant digit is at the head of the string. 
@@ -12,18 +12,18 @@ An integer 25, for example, is stored in a string s as '2' at s[0], '5' at s[1],
 
 The integer datatypes supported by C are:
 Read as (Type, storage size, value range)
-- int ,	2 or 4 bytes ,	-32,768 to 32,767 or -2,147,483,648 to 2,147,483,647
-- unsigned int ,	2 or 4 bytes ,	0 to 65,535 or 0 to 4,294,967,295
-- short ,	2 bytes ,	-32,768 to 32,767
-- unsigned short ,	2 bytes ,	0 to 65,535
-- long ,	8 bytes ,	-9223372036854775808 to 9223372036854775807
-- unsigned long ,	8 bytes ,	0 to 18446744073709551615
+- int ,	2 or 4 bytes ,-32,768 to 32,767 or -2,147,483,648 to 2,147,483,647
+- unsigned int , 2 or 4 bytes , 0 to 65,535 or 0 to 4,294,967,295
+- short , 2 bytes , -32,768 to 32,767
+- unsigned short , 2 bytes , 0 to 65,535
+- long , 8 bytes , -9223372036854775808 to 9223372036854775807
+- unsigned long , 8 bytes , 0 to 18446744073709551615
 
 An integer is a variable that specifically holds a numerical value. 
 Whereas a string is a variable that can hold a range of characters (including numbers). 
 The maximum length of a string  literal allowed in Microsoft C is approximately 2,048 bytes.
 Numbers which exceed 1000 digits cannot be stored as any of the integer datatypes mentioned above.
-Therefore, storing these numbers as intals to perform various operations on them is very practical and useful.
+Therefore, storing these numbers as intals (strings) to perform various operations on them is very practical and useful.
 Other use cases of intals could be in scientific computation which require high integer precision.
 Additonally, string manipulation is easier to perform, which will give us more flexibilty to play with the numbers and potentially speedup the computation.
 
@@ -43,8 +43,7 @@ Before returning, all character pointers which were defined are freed. To implem
 To convert an integer into the intal return type, I define a helper function called itostr.
 One issue I faced was that calloc() was not initialising the dynamically allocated
 character pointers with '0', which is why I had to loop through the array and initialise with '0'.
-Additonally, I witnessed some strange behaviour where x-y would result in a segfault
-but x-y/2-1 worked perfectly. 
+Additonally, I witnessed some strange behaviour where x-y would result in a segfault but x-y/2-1 worked perfectly. 
 
 FUTURE WORK:
 

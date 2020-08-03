@@ -530,9 +530,10 @@ char* intal_fibonacci(unsigned int n)
 }
 
 
-static char* collect(unsigned int x, unsigned int y){
-
-    if(y-x !=1 && x!=y)
+static char* collect(unsigned int x, unsigned int y)
+{
+    int one = 1;
+    if(y-x !=1*one && x!=y)
     {
         char *x_char = collect(x, x + -(x-y)/2-1);
         char *y_char = collect(x + -(x-y)/2, y);
@@ -587,10 +588,7 @@ char* intal_bincoeff(unsigned int n, unsigned int k)
         free(collected);
         free(fact);
         return answer;
-        
     }
-
-    
 }
 
 int intal_max(char **arr, int n)
